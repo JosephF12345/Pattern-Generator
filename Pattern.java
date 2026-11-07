@@ -1,7 +1,10 @@
 // Joseph Fitzpatrick
 //Date: 10/28/26
-// This class utilizes methods and loops to create shapes drawn from characters in certain sequences. 
+// This class utilizes methods and loops to create shapes drawn from characters in certain sequences or patterns. 
 public class Pattern {
+//  Pre-condition: rows must be an integer greater than or equal to 2 
+//  Post-condition: prints an an upward right triangle out of '*' containing the specified number of rows
+
   public static void stars(int rows)
   {
     int row = 1;
@@ -16,6 +19,9 @@ public class Pattern {
       System.out.println("");
     }
   }
+  //  Pre-condition: rows must be an integer greater than or equal to 2 
+//  Post-condition: prints an upward right triangle out of the current row number printed repeatedly across a row; it contains the specified number of rows
+
   public static void triangle(int rows){
     int row = 1;
     int count = 0;
@@ -31,7 +37,8 @@ public class Pattern {
       System.out.println("");
     }
   }
-  
+  //  Pre-condition: start must be a positive odd integer greater than or equal to 3
+//  Post-condition: prints a downward right triangle out of start printed repeatedly accross each row. Start decreases by 2 each row with the number of rows being (start/2) +1 
  public static void odds(int start){
     int cols = (start / 2) + 1;
     //start = 9 -> cols = 5
@@ -49,6 +56,8 @@ public class Pattern {
     }
     
   }
+  //  Pre-condition: maxE must be a positive integer greater than or equal to 2
+//  Post-condition: prints a sideays isosceles triangle with 'E' or 'O' being repeatedly printed in a row based on whether maxE is even or odd and the current row number. At the median row, 'E' is printed maxE times. 
 public static void eo(int maxE){
   for (int row = 1; row<=maxE-1; row++){
     for (int col = 1; col<= row; col++)
@@ -118,7 +127,8 @@ public static void eo(int maxE){
     }
     System.out.println();
   }
-  
+//  Pre-condition: rows must be a positive integer greater than or equal to 2
+//  Post-condition: prints a centered upside down pyramid with the row number repeatedly printed in each row. As you go down rows, a space is added each time and the amount of row numbers printed in a row decreases by 2 until the amount of row numbers printed in a row is 1
 }
 public static void pyramid(int rows){
   int startCol = (rows*2)-1;
@@ -145,18 +155,10 @@ public static void pyramid(int rows){
         stars(7);
         triangle(9);
         odds(9);
-        eo(5);
         eo(6);
-        pyramid(9);
+        eo(5);
+        pyramid(5);
   }
 }
 
-
-//999999999
-//7777777
-//55555
-//333
-//1
-//count = for 9: 9 / 2 -> 4.5 -> 4 -> 4+1 | for 11: 11 / 2 -> 5.5 -> 5 -> 5+1
-// 11, 9, 7, 5, 3, 1
 
