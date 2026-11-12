@@ -5,18 +5,20 @@ public class Pattern {
 //  Pre-condition: rows must be an integer greater than or equal to 2 
 //  Post-condition: prints an an upward right triangle out of '*' containing the specified number of rows
 
+
   public static void stars(int rows)
   {
     int row = 1;
+    
     while (row <= rows){
       int col = 1;
-      while (col <= row)
+      while (col <= ((row* 2)-1))
       {
         System.out.print('*');
         col++;
       }
       row++;
-      System.out.println("");
+      System.out.println();
     }
   }
   //  Pre-condition: rows must be an integer greater than or equal to 2 
@@ -40,20 +42,23 @@ public class Pattern {
   //  Pre-condition: start must be a positive odd integer greater than or equal to 3
 //  Post-condition: prints a downward right triangle out of start printed repeatedly accross each row. Start decreases by 2 each row with the number of rows being (start/2) +1 
  public static void odds(int start){
-    int cols = (start / 2) + 1;
-    //start = 9 -> cols = 5
-    //
-    for (int row = start; row >= 1; row--)
+    int rows = (start / 2) + 1;
+    
+    
+    //start = 9 -> rows = 5
+    
+    for ( int row = 1; row <= rows; row++)
     {
-      
-      for (int col = cols; col <=row; col++){
-        
+      for (int col = start; col >= 1; col--)
+      {
         System.out.print(start);
-        
       }
+      start -= 2;
       System.out.println();
-      start-=2;
+        
+      
     }
+    
     
   }
   //  Pre-condition: maxE must be a positive integer greater than or equal to 2
